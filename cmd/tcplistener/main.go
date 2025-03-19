@@ -9,7 +9,6 @@ import (
 	"strings"
 )
 
-const inputFilePath = "messages.txt"
 const port = ":42069"
 
 func main() {
@@ -54,7 +53,7 @@ func getLinesChannel(f io.ReadCloser) <-chan string {
 				if errors.Is(err, io.EOF) {
 					break
 				}
-				fmt.Printf("error reading from %s: %s\n", inputFilePath, err)
+				fmt.Printf("error reading from buffer: %s\n", err)
 				break
 			}
 			str := string(buffer[:n])
